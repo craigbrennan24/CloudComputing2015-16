@@ -8,3 +8,5 @@ def EulerProj1():
     elif i % 5 == 0:
       total = total + i
   print(total)
+
+EulerProj1()
