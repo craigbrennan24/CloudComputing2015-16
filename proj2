@@ -1,0 +1,11 @@
+#! /usr/bin/env python
+
+def EulerProj2():
+  total = 0
+  max = 4000000
+  flag = True
+  fib1 = 1
+  fib2 = 1
+  while flag == True:
+    if fib2 % 2 == 0:
+      
