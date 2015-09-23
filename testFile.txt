@@ -1,2 +1,2 @@
 This is a test file, typing from VM #1 from Okeanos
-Adding different text from VM 1, blah blah blah
+Adding text to the file from VM 2, using the VM from lab one because Okeanos would not allow another to be made
