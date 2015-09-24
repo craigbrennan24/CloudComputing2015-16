@@ -12,7 +12,8 @@ def EulerProj4():
       if ( stringTest == reverseTest and
            largest < test):
         largest = test
-        print "Found %d" % largest
-  print "Answer = %d" % largest
+       #print "Found %d" % largest
+  print "Largest palindrome with two 3-digit factors:"
+  print "= %d" % largest
 
 EulerProj4()

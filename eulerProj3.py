@@ -13,19 +13,10 @@ def EulerProj3():
       if test == True:
         largest = i
         print "%d POTENTIAL MATCH" % largest
-    if i == math.ceil(math.sqrt(target)):
+    if i == math.ceil(math.sqrt(target)):#no need to search past sqrt of target
       break
-    if i % 1000000000 == 0:
-      print(i)
-    if currentPercent != lastPercent:
-      print currentPercent
-      lastPercent = currentPercent
-    currentPercent = math.ceil(percentage(i, target))
     i = i + 2
   print "%d MATCH" % largest
-      
-def percentage(part, whole):
-  return 100 * float(part)/float(whole)
 
 def isPrime(x):
   result = True
