@@ -8,8 +8,9 @@ def sundayCounter():
 	startMonth = 1
 	targetYear = 2000
 	
-	for i in range(startYear, (targetYear+1)):
-
+	for year in range(startYear, (targetYear+1)):
+		for month in range( startMonth, 13 ):
+			for day in range( 
 
 def isLeapYear(x):
 	result = True
@@ -27,3 +28,20 @@ def isLeapYear(x):
 		#if not divisible by 4 then definitely not a leap yr
 		result = False
 	
+
+def getDaysInMonth(x, y):
+	#Returns the amt of days in specified month
+	#x = month
+	#y = year (to check if year is leap year)
+	if( x == 4 or x == 6 or x == 9 or x == 11 ):
+		#30 days has September, April, June and November
+		return 30
+	elif( x < 4 or x == 5 or x == 7 or x == 8 or x == 10 or x == 12 ):
+		#All the rest have 31... 
+		return 31
+	elif( x == 2 ):
+		#Except for February, once in four: February has 1 day more
+		if( isLeapYear(y) == True ):
+			return 29
+		else:
+			return 28
