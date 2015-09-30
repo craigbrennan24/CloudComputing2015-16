@@ -1,4 +1,5 @@
 #! /usr/bin/env python
+import math
 
 #How many sundays fell on the first month during the twentieth century (1 Jan 1901 - 31 Dec 2000)
 
@@ -7,10 +8,24 @@ def sundayCounter():
 	startDay = 1
 	startMonth = 1
 	targetYear = 2000
-	
-	for year in range(startYear, (targetYear+1)):
+	dayCounter = 0
+	startCounting = False
+	sundayCounter = 0
+
+	#Right after I finished this the lab supervisor announces that there are high level functions that can count days for you
+	#so it is not required to do it all yourself. :(
+	for year in range(startYear, (targetYear+1) ):
 		for month in range( startMonth, 13 ):
-			for day in range( 
+			for day in range( startDay, (getDaysInMonth(month,year) + 1) ):
+				dayCounter += 1
+				if( year == 1901 and day == 1 and month == 1 ):
+					startCounting = True #Start counting Sundays
+				if( startCounting ):
+					if( day == 1 ):
+						if( ( dayCounter % 7 ) == 0 ):
+							sundayCounter += 1
+	
+	print "%d Sundays between 1 Jan 1901 and 31 Dec 2000" % sundayCounter
 
 def isLeapYear(x):
 	result = True
@@ -18,9 +33,8 @@ def isLeapYear(x):
 		#probably a leap year
 		if( x % 100 == 0 ): # if yr is a century
 			#century is only a leap year if divisible by 400
-			if( x % 400 == 0 ):
-				#century is leap year
-			else:
+			if( x % 400 != 0 ):
+				#century is not leap year if not divisible by 400
 				result = False
 		else:
 			result = False
@@ -45,3 +59,8 @@ def getDaysInMonth(x, y):
 			return 29
 		else:
 			return 28
+	else:
+		print "Not a month..."
+		return -1
+
+sundayCounter()
