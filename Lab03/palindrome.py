@@ -4,9 +4,11 @@
 
 def Palindrome( s ):
 	string = str(s)
-	string.upper()
-
-	if( s == "TEST" ):
+	string = string.upper()
+	stringReverse = string[::-1]
+	print "%s" % string
+	print "%s" % stringReverse
+	if( string == stringReverse ):
 		print "TRUE"
 	else:
 		print "FALSE"
